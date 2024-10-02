@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Income Expense calculator</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body class="bg-slate-200">
+    <div class="container mx-auto h-16 flex justify-center items-center ">
+        <h1 class="text-3xl font-bold ">Income Expense calculator</h1>
+    </div>
+    <div class=" container mx-auto mt-10 flex gap-4 ">
+        <div class="flex flex-col p-4 w-full gap-2 bg-white rounded shadow-lg">
+            <span class="text-xl font-semibold">Total Income</span>
+            <span class="text-xl font-semibold text-green-500" id="totalIncome"></span>
+        </div>
+        <div class="flex flex-col p-4  w-full gap-2 bg-white rounded shadow-lg">
+            <span class="text-xl font-semibold">Total Expense</span>
+            <span class="text-xl font-semibold text-red-500" id="totalExpense"></span>
+        </div>
+        <div class="flex flex-col p-4 w-full gap-2 bg-white rounded shadow-lg">
+            <span class="text-xl font-semibold">Balance</span>
+            <span class="text-xl font-semibold text-blue-500" id="totalBalance"></span>
+        </div>
+    </div>
+
+    <!-- addBox-container -->
+
+    <div class="container mx-auto mt-10 flex flex-col gap-8 p-4 bg-white rounded shadow-lg">
+        <div><h1 class="text-2xl font-semibold ">Add New Entry</h1></div>
+        <div class="flex  items-center gap-4">
+            <div class="flex flex-col w-3/5 ">
+                <span>Description</span>
+                <input class="tex-2xl font-semibold px-4 py-3 rounded border-2 border-slate-300"
+                 type="text" name="" id="description">
+            </div>
+            <div class="flex flex-col  w-2/5">
+                <span>Amount</span>
+                <input class="tex-2xl font-semibold px-4 py-3 rounded border-2 border-slate-300"
+                 type="number" name="Amount" id="Amount">
+            </div>
+            <div class="flex flex-col  w-2/5">
+                <span>Type</span>
+                <div class="flex gap-8" id="">
+                    <select name="" id="type" class="border-2 border-slate-300 px-4 py-3 rounded hover:cursor-pointer ">
+                        <option value="" class="hover:cursor-pointer" disabled="true" selected="true">choose type</option>
+                        <option value="Income" class="hover:cursor-pointer" >Income</option>
+                        <option value="Expense" class="hover:cursor-pointer">Expense</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div><button
+             class="w-full bg-blue-500 px-4 py-2 rounded text-bold text-white active:bg-blue-800"
+             id="add"
+             type="button" value="Add+">Add Entry</button></div>
+    </div>
+
+    <!-- display content -->
+     <div class="container mx-auto p-4 flex flex-col my-10 gap-8 bg-white rounded shadow-lg">
+        <div><h2 class="text-2xl font-semibold">Entries</h2></div>
+        <div id="optionDiv">
+            <select name="" id="option" class="px-4 py-2 border-2 border-slate-300 rounded ">
+                <option value="" selected="true" id="all">All</option>
+                <option value="Income" id="income">Income</option>
+                <option value="Expense" id="expense">Expense</option>
+            </select>
+        </div>
+        <div class="">
+            <table class="w-full text-left">
+                <thead >
+                    <tr>
+                        <th class="p-4">Description</th>
+                        <th class="p-4">Amount</th>
+                        <th class="p-4">Type</th>
+                        <th class="p-4">Action</th>
+                    </tr>
+                </thead>
+                <tbody id="tbody">
+                </tbody>
+
+            </table>
+        </div>
+     </div>
+
+
+
+
+
+
+
+
+    <script src="./js/script.js"></script>
+</body>
+</html>
